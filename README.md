@@ -9,4 +9,5 @@
 ## 参考文档
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+革命尚未成功，同志仍需努力
 
