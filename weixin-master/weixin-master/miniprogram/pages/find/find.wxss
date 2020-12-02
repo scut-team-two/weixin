@@ -1,0 +1,16 @@
+/* pages/find/find.wxss */
+.button-sp-area{
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 60%;
+}
+.weui-input{
+  border:1px solid#ddd;
+  width: 100%;
+  height: 30px;
+}
+.page-section-title{
+  font-weight:bold;
+  color: #4169E1;
+  display: flex;
+}

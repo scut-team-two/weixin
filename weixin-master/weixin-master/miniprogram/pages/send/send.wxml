@@ -1,0 +1,19 @@
+<!--miniprogram/pages/send/send.wxml-->
+<view class="login">
+  <image class="zz"  src="cloud://group2-5gpz1vkk79ec1e20.6772-group2-5gpz1vkk79ec1e20-1304093654/zz.png"></image>
+</view>
+
+<view class="lx">
+  <text>类型</text>
+</view>
+
+  <view class="button-sp-area">
+  <button bindtap="lose" 
+  plain="ture">
+  丢失物品</button>
+</view>
+  <view class="button-sp-area">
+  <button bindtap="find" 
+  plain="ture" >
+  拾得物品</button>
+</view>

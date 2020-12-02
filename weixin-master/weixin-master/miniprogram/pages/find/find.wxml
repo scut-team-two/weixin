@@ -1,0 +1,48 @@
+<!--pages/find/find.wxml-->
+
+<view class="container">
+  <view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+
+
+      <view class="page-section">
+        <view class="page-section-title">提问</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="" >
+              <input class="weui-input" maxlength="50" placeholder="最大输入长度为50" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+<view class="page-section">物品类别 
+        <input  class="weui-input" placeholder="请输入……" />
+ </view>
+ <view class="page-section">详细信息
+        <input  class="weui-input" placeholder="请输入……" />
+ </view>
+ <view class="page-section">拾得时间
+        <input  class="weui-input" placeholder="请输入……" />
+ </view>
+ <view class="page-section">拾得地点
+        <input  class="weui-input" placeholder="请输入……" />
+ </view>
+ <view class="page-section">联系方式
+        <input  class="weui-input" placeholder="请输入……" />
+        <view class="button-sp-area"></view>
+        <view class="button-sp-area"></view>
+ </view>
+
+<view class="submit">
+  <button style="display:flex;justify-content:center;height: 80rpx;width: 80%;color:white;background-color:#4169E1">发布</button>
+</view>
+        <view class="button-sp-area"></view>
+        <view class="cancel">
+        <button style="display:flex;justify-content:center;height: 80rpx;width: 80%">取消</button>
+      </view>
+
+    </form>
+  </view>
+
+</view>

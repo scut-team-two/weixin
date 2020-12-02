@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/list/list",
+    "pages/send/send",
+    "pages/find/find",
+    "pages/lose/lose"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#4169E1",
+    "navigationBarTitleText": "华工找找",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "text": "看贴",
+        "iconPath": "/images/首页1.png",
+        "selectedIconPath": "/images/首页.png"
+      },
+      {
+        "pagePath": "pages/send/send",
+        "text": "发帖",
+        "iconPath": "/images/新建1.png",
+        "selectedIconPath": "/images/新建.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/人物1.png",
+        "selectedIconPath": "/images/人物.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
