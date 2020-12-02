@@ -1,5 +1,6 @@
 <!--miniprogram/pages/my/my.wxml-->
 <view class="login">
+  
   <view class="userAvatarUrl">
     <open-data  class="userAvatarUrl" type="userAvatarUrl" ></open-data>
   </view>

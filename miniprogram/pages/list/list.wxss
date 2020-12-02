@@ -1,1 +1,34 @@
 /* miniprogram/pages/list/list.wxss */
+.all{
+  height: 400rpx;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10rpx;
+  
+  
+}
+.line{
+  margin: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.image{
+  height: 200rpx;
+  width: 400rpx;
+}
+.userAvatarUrl{
+  height: 130rpx;
+  width: 130rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.content text {
+  word-break:break-all;
+}
