@@ -62,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  find: function(){
+    wx.navigateTo({
+      url: '../find/find',
+    })
+  },
+
+ lose: function(){
+    wx.navigateTo({
+      url: '../lose/lose',
+    })
   }
 })

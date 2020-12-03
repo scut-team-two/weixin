@@ -1,6 +1,0 @@
-<!--miniprogram/pages/index/index.wxml-->
-<view class="login">
-  <image class="logo"  src="cloud://group2-5gpz1vkk79ec1e20.6772-group2-5gpz1vkk79ec1e20-1304093654/logo.png"></image>
-  
-  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" >点击登陆</button>
-</view>
