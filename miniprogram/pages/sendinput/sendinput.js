@@ -47,8 +47,7 @@ Page({
    
 
   },
-  //发表
-  send:function(){
+  sendwithImage:function(){
     let that=this
     let title=this.data.title
     let detail=this.data.detail
@@ -57,7 +56,7 @@ Page({
     let userAvatarUrl= app.globalData.userAvatarUrl
     console.log(title,detail)
     wx.cloud.uploadFile({
-      cloudPath:"123.png",
+      cloudPath:nickname+ new Date().getTime()+".png",
       filePath:that.data.path,
       success:res=>{
         console.log("上传成功",res.fileID)
@@ -73,18 +72,59 @@ Page({
         time:time,
         title:that.data.title,
         image:that.data.image,
-        flag:false,  
+        flag:that.data.flag,  
       },
       success: function(res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
         console.log(res)
+        wx.switchTab({
+          url: '../list/list',
+        })
       }
+      
     })
       },
       fail:console.error
     })
-    
 
+  },
+  sendwithText:function(){
+    let that=this
+    let title=this.data.title
+    let detail=this.data.detail
+    let time=this.getTime()
+    let nickname = app .globalData.nickname
+    let userAvatarUrl= app.globalData.userAvatarUrl
+    const db = wx.cloud.database()
+        db.collection('t_List').add({
+      // data 字段表示需新增的 JSON 数据
+      data: {
+        nickname:nickname,
+        userAvatarUrl:userAvatarUrl,
+        time:time,
+        title:that.data.title,
+        image:that.data.image,
+        flag:that.data.flag,  
+      },
+      success: function(res) {
+        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+        console.log(res)
+        wx.switchTab({
+          url: '../list/list',
+        })
+      },    
+    })
+  },
+    
+    
+  //发表
+send:function(){
+    if(this.data.path==""){
+      this.sendwithText()
+    }
+    else{
+      this.sendwithImage()
+    }
   },
   /**
    * 生命周期函数--监听页面加载

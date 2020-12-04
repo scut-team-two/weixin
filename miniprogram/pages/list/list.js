@@ -33,7 +33,7 @@ Page({
    */
   onLoad: function (options) {
     
-    
+    this.getlist()
 
   },
 
@@ -49,7 +49,7 @@ Page({
    */
   onShow: function () {
     
-    this.getlist()
+   
   },
 
   /**
@@ -70,14 +70,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.getlist()
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**
