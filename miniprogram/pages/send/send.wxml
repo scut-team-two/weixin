@@ -8,12 +8,10 @@
 </view>
 
   <view class="button-sp-area">
-  <button bindtap="lose" 
-  plain="ture">
+  <button bindtap="lose" plain="ture">
   丢失物品</button>
 </view>
   <view class="button-sp-area">
-  <button bindtap="find" 
-  plain="ture" >
+  <button bindtap="find" plain="ture" >
   拾得物品</button>
 </view>

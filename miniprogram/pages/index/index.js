@@ -30,7 +30,7 @@ Page({
          }).get().then(res=>{
            //console.log(res)
            if(res.data.length){
-             console.log("成功")
+             //console.log("成功")
            }
            else{
             collection.add({

@@ -1,0 +1,14 @@
+<!--miniprogram/pages/sendinput/sendinput.wxml-->
+<view >
+  <view>
+    <view>标题</view>
+    <input type="text" placeholder="请输入标题" maxlength="35" bindinput="getTitle" />
+  </view>
+  <view>
+    <view>正文</view>
+    <textarea placeholder="请输入正文" auto-focus maxlength="20" auto-focus="{{false}}" bindinput="getDetail" />
+  </view>
+  <image src="cloud://group2-5gpz1vkk79ec1e20.6772-group2-5gpz1vkk79ec1e20-1304093654/logo.png" style="width:160rpx;height:160rpx;border:1rpx solid silver;" bindtap='addImage' ></image>
+  <button bindtap="send">发表</button>
+</view>
+

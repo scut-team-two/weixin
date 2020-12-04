@@ -10,10 +10,10 @@
   </view> 
   <view class="content">
     <view class="image">
-      <image></image>
+      <image src="{{item.image}}"></image>
     </view> 
     <view>
-      <text>{{item.text}}</text>
+      <text>{{item.title}}</text>
     </view>   
 
   </view>
