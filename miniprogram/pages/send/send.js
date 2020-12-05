@@ -66,13 +66,13 @@ Page({
 
   find: function(){
     wx.navigateTo({
-      url: '../sendinput/sendinput',
+      url: '../sendinput/sendinput?flag=1',
     })
   },
 
  lose: function(){
     wx.navigateTo({
-      url: '../sendinput/sendinput',
+      url: '../sendinput/sendinput?flag=0',
     })
   }
 })

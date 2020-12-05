@@ -10,7 +10,7 @@ Page({
     detail:"",
     time:"",
     image:"",
-    flag:false,
+    flag:"",
     path:""
 
   },
@@ -71,15 +71,14 @@ Page({
         userAvatarUrl:userAvatarUrl,
         time:time,
         title:that.data.title,
+        detail:that.data.detail,
         image:that.data.image,
         flag:that.data.flag,  
       },
       success: function(res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
         console.log(res)
-        wx.switchTab({
-          url: '../list/list',
-        })
+       
       }
       
     })
@@ -103,15 +102,14 @@ Page({
         userAvatarUrl:userAvatarUrl,
         time:time,
         title:that.data.title,
+        detail:that.data.detail,
         image:that.data.image,
         flag:that.data.flag,  
       },
       success: function(res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
         console.log(res)
-        wx.switchTab({
-          url: '../list/list',
-        })
+        
       },    
     })
   },
@@ -121,16 +119,23 @@ Page({
 send:function(){
     if(this.data.path==""){
       this.sendwithText()
+      
     }
     else{
       this.sendwithImage()
     }
+    wx.switchTab({
+      url: '../list/list',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options.flag)
+    this.setData({
+      flag:options.flag
+    })
   },
 
   /**
@@ -144,7 +149,7 @@ send:function(){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getTime()
+    
   },
 
   /**

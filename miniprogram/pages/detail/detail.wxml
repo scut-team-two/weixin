@@ -1,0 +1,51 @@
+<!--miniprogram/pages/detail/detail.wxml-->
+<view class="all_1" wx:if="{{listdetail.image}}" style="height:{{height}}rpx">
+    <view class="line">
+      <view class="userAvatarUrl">
+        <open-data type="userAvatarUrl" ></open-data>
+      </view>
+      <view class="name_time">
+        <open-data type="userNickName"></open-data>
+        <text class="time">{{listdetail.time}}</text>
+      </view>
+      
+      <view class="delete">
+        <button bindtap="delete">删除</button> 
+      </view>  
+    </view>
+   <view class="content" >
+      <view class="image">
+        <image src="{{listdetail.image}}" mode="heightFix"></image>
+      </view> 
+      <view class="text">
+        <view class="title">
+          <text >{{listdetail.title}}</text>
+        </view>
+        <text>{{listdetail.detail}}</text>
+      </view>        
+    </view>
+  </view>
+<!-- 无图 -->
+  <view class="all_2" wx:else bindtap="gotoDetail">
+    <view class="line">
+      <view class="userAvatarUrl">
+        <open-data type="userAvatarUrl" ></open-data>
+      </view>
+      <view class="name_time">
+        <open-data type="userNickName"></open-data>
+        <text class="time">{{listdetail.time}}</text>
+      </view>
+      
+       
+      <view class="delete">
+        <button bindtap="delete">删除</button> 
+      </view>  
+        
+    </view>
+    <view class="content" >
+      <view class="text">
+        <text>{{listdetail.title}}</text>
+        <text>{{listdetail.detail}}</text>
+      </view>        
+    </view>
+  </view>
