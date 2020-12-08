@@ -1,4 +1,10 @@
 /* miniprogram/pages/detail/detail.wxss */
+.all{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .all_1{
   
   background-color: #f6f6f6;
@@ -10,6 +16,14 @@
 .all_2{
   height: 200rpx;
   background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 5rpx;
+}
+.all_3{
+  height: 200rpx;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -32,12 +46,12 @@
 }
 .image{
   height: 200rpx;
-  
+ 
 }
-.userAvatarUrl{
+.userAvatarUrl image{
   height: 130rpx;
   width: 130rpx;
-  overflow: hidden;
+  
   border-radius: 50%;
 }
 .content text {
@@ -68,8 +82,28 @@
 }
 .delete{
   height: 50rpx;
-  width: 20rpx;
+  width: 20rpx; 
 }
 .time{
   font-size: smaller;
+}
+.comment{
+  position: fixed;
+  width: 100%;
+  height: 80rpx;
+  bottom:0px;
+}
+.buttom{
+  display: flex;
+  flex-direction: row;
+  
+}
+.buttom button{
+ 
+  font-size: smaller;
+  margin-right: 40rpx;
+}
+
+.buttom .inp{
+  margin-left: 20rpx;
 }
