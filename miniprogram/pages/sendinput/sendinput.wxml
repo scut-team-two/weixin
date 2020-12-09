@@ -11,7 +11,12 @@
       <view>正文</view>
       <textarea placeholder="请输入正文" auto-focus maxlength="200" auto-focus="{{false}}" bindinput="getDetail" />
     </view>
-    <image src="cloud://group2-5gpz1vkk79ec1e20.6772-group2-5gpz1vkk79ec1e20-1304093654/logo.png"  mode="heightFix" bindtap='addImage' ></image>
+    <block wx:if="{{path}}">
+      <image src="{{path}}"  mode="heightFix" bindtap='addImage' ></image>
+    </block>
+    <block wx:else>
+      <image src="cloud://group2-5gpz1vkk79ec1e20.6772-group2-5gpz1vkk79ec1e20-1304093654/添加.png"  mode="heightFix" bindtap='addImage' ></image>
+    </block>
     <button bindtap="send">发表</button>
   </view>
 </view>

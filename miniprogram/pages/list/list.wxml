@@ -1,13 +1,13 @@
 
 <view  wx:for="{{list}}" wx:key="id">
   <!-- 有图 -->
-  <view class="all_1" wx:if="{{item.image}}" bindtap="gotoDetail" id="{{item._id}}">
+  <view class="all_1" wx:if="{{item.image}}" bindtap="gotoDetail" id="{{item._id}}" >
     <view class="line">
       <view class="userAvatarUrl">
-        <open-data type="userAvatarUrl" ></open-data>
+        <image src="{{item.userAvatarUrl}}"></image>
       </view>
       <view class="name_time">
-        <open-data type="userNickName"></open-data>
+        <text>{{item.nickname}}</text>
         <text class="time">{{item.time}}</text>
       </view>
       <view class="flag">
@@ -25,13 +25,13 @@
     </view>
   </view>
 <!-- 无图 -->
-  <view class="all_2" wx:else bindtap="gotoDetail" id="{{item._id}}">
+  <view class="all_2" wx:else bindtap="gotoDetail" id="{{item._id}}" >
     <view class="line">
       <view class="userAvatarUrl">
-        <open-data type="userAvatarUrl" ></open-data>
+        <image src="{{item.userAvatarUrl}}"></image>
       </view>
       <view class="name_time">
-        <open-data type="userNickName"></open-data>
+        <text>{{item.nickname}}</text>
         <text class="time">{{item.time}}</text>
       </view>
       <view class="flag">

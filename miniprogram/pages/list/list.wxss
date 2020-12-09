@@ -1,4 +1,5 @@
 /* miniprogram/pages/list/list.wxss */
+
 .all_1{
   height: 400rpx;
   background-color: #f6f6f6;
@@ -34,10 +35,9 @@
   height: 200rpx;
   
 }
-.userAvatarUrl{
+.userAvatarUrl image{
   height: 130rpx;
   width: 130rpx;
-  overflow: hidden;
   border-radius: 50%;
 }
 .content text {

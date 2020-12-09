@@ -27,7 +27,7 @@ Page({
   },
   getTime(){
     var time = util.formatTime(new Date());
-    console.log(time)
+    //console.log(time)
     return time
   },
   addImage:function(){
