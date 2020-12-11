@@ -11,6 +11,11 @@ Page({
 
   },
 
+  gotomyList:function(){
+    wx.navigateTo({
+      url: '../mylist/mylist',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

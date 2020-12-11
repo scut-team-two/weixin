@@ -1,0 +1,60 @@
+
+.all_1{
+  height: 400rpx;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 5rpx;
+}
+.all_2{
+  height: 200rpx;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 5rpx;
+}
+.line{
+  margin: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+.name_time{
+  margin: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  
+}
+.image{
+  height: 200rpx;
+  
+}
+.userAvatarUrl image{
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 50%;
+}
+.content text {
+  word-break:break-all;
+  margin-left: 20rpx;
+}
+.content image{
+  height: 200rpx;
+  width: 200rpx;
+  margin-left: 10rpx;
+}
+.flag{
+  font-family: SimHei;
+  height: 45rpx;
+  background-color: #ffffff;
+  
+  margin: 5rpx;
+}
+.time{
+  font-size: smaller;
+}

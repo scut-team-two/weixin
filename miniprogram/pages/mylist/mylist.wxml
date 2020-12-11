@@ -1,0 +1,48 @@
+<view  wx:for="{{list}}" wx:key="id">
+  <!-- 有图 -->
+  <view class="all_1" wx:if="{{item.image}}" bindtap="gotoDetail" id="{{item._id}}" >
+    <view class="line">
+      <view class="userAvatarUrl">
+        <image src="{{item.userAvatarUrl}}"></image>
+      </view>
+      <view class="name_time">
+        <text>{{item.nickname}}</text>
+        <text class="time">{{item.time}}</text>
+      </view>
+      <view class="flag">
+        <view wx:if="{{item.flag}}">寻物启事</view>
+        <view wx:else>失物招领</view>
+      </view>  
+    </view>
+   <view class="content" >
+      <view class="image">
+        <image src="{{item.image}}" mode="heightFix"></image>
+      </view> 
+      <view>
+        <text>{{item.title}}</text>
+      </view>        
+    </view>
+  </view>
+<!-- 无图 -->
+  <view class="all_2" wx:else bindtap="gotoDetail" id="{{item._id}}" >
+    <view class="line">
+      <view class="userAvatarUrl">
+        <image src="{{item.userAvatarUrl}}"></image>
+      </view>
+      <view class="name_time">
+        <text>{{item.nickname}}</text>
+        <text class="time">{{item.time}}</text>
+      </view>
+      <view class="flag">
+        <view wx:if="{{item.flag}}">寻物启事</view>
+        <view wx:else>失物招领</view>
+      </view>  
+    </view>
+    <view class="content" >
+      <view>
+        <text>{{item.title}}</text>
+      </view>        
+    </view>
+  </view>
+
+</view>

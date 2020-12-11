@@ -16,7 +16,10 @@ Page({
    
     openid:"",
     comment:"",
-    nickname:""
+    nickname:"",
+
+    isfollow:0,
+    
     
   },
   delete:function(e){
@@ -53,11 +56,76 @@ Page({
 },
   follow:function(){
 },
+  clickImg:function(e){
+    console.log(e.currentTarget.id)
+    let imgUrl = e.currentTarget.id
+    wx.previewImage({
+      urls: [imgUrl], //需要预览的图片http链接列表，注意是数组
+      current: '', // 当前显示图片的http链接，默认是第一个
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  
+},
 getTime(){
   var time = util.formatTime(new Date());
   //console.log(time)
   return time
 },
+//关注
+  follow:function(e){
+    let id = e.currentTarget.id
+    let openid = app.globalData.openid
+    let that = this
+    const db = wx.cloud.database()
+    if(that.data.isfollow==0){
+      db.collection('t_follow').add({
+        // data 字段表示需新增的 JSON 数据
+        data: {
+          tieziID:id
+        },
+        success: function(res) {
+          // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+          console.log(res) 
+          that.setData({
+            isfollow:1
+          })
+        },    
+      })
+    }
+    else{
+      db.collection('t_follow').where({
+          // 查询条件
+          _openid: openid,
+          tieziID:id
+        })
+        .get()
+        .then(res => {
+          db.collection('t_follow').doc(res.data[0]._id)
+          .remove()
+          .then(res => {
+            // 删除数据成功
+            console.log("删除数据成功",res)
+            that.setData({
+              isfollow:0
+            })
+          }).catch(err => {
+            // 删除数据失败
+            console.log(err)
+          })
+
+        }).catch(err => {
+          // 查询数据失败
+          console.log(err)
+        })
+
+
+
+        
+    }
+  },
+  
 //提交表单
   formSubmit: function (e){
     //console.log(e.detail.value)
@@ -116,6 +184,7 @@ getTime(){
    */
   onLoad: function (options) {
     let that = this
+    let openid = app.globalData.openid
     console.log(options.id)
     that.setData({
       openid:app.globalData.openid,
@@ -147,7 +216,30 @@ getTime(){
       fail: console.error
     })
     //获取评论
-        that.getComment()
+      that.getComment()
+      ////////////////////是否关注
+      const db = wx.cloud.database()
+      db.collection('t_follow').where({
+          // 查询条件
+          _openid: openid,
+          tieziID:options.id
+        })
+        .get()
+        .then(res => {
+          if(res.data.length>0){
+            console.log("已关注",res)
+            that.setData({
+              isfollow:1,    
+            })
+          }
+          else{
+            console.log("未关注",res)
+          }
+          
+        }).catch(err => {
+          // 查询数据失败
+          console.log(err)
+        })
   },
 
   /**

@@ -1,4 +1,3 @@
-
 const app = getApp()
 Page({
 
@@ -6,25 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[],
+    openid:""
   },
-  getlist(){
+  getmyList(){
     let that = this
     let list_reverse=[]
-    wx.cloud.callFunction({
-      name:"getlist",
-      success(res){
-        console.log("success",res)
-        list_reverse=res.result.data
-        list_reverse.reverse()
-        that.setData({
-          list:list_reverse
-        })
-      },
-      fail(err){
-        console.log("fail",err)
+    const db = wx.cloud.database()
+    db.collection('t_List').where({
+      _openid: "o5VXA4voUJfQRqjLjq-llagZajQQ",
+    })
+    .get({
+      success: function(res) {
+          let list = res.data.reverse()
+          that.setData({
+            list:list
+          })
+        
+        
+        //console.log(res.data)
       }
     })
+   
   },
   gotoDetail:function(e){
     //console.log(e)
@@ -39,7 +41,8 @@ Page({
    */
   onLoad: function (options) {
     
-    this.getlist()
+    
+    this.getmyList()
 
   },
 
@@ -76,7 +79,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getlist()
+    this.getmyList()
     wx.stopPullDownRefresh()
   },
 
