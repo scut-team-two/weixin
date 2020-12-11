@@ -6,7 +6,8 @@
     "pages/send/send",
     "pages/sendinput/sendinput",
     "pages/detail/detail",
-    "pages/mylist/mylist"
+    "pages/mylist/mylist",
+    "pages/myfollow/myfollow"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

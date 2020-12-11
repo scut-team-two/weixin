@@ -1,3 +1,4 @@
+// miniprogram/pages/myfollow/myfollow.js
 const app = getApp()
 Page({
 
@@ -6,28 +7,37 @@ Page({
    */
   data: {
     list:[],
-    openid:""
+    
   },
-  getmyList(){
+  getmyfollow(){
     let that = this
-    let list_reverse=[]
-    let openid= app.globalData.openid
-    const db = wx.cloud.database()
-    db.collection('t_List').where({
-      _openid: openid,
-    })
-    .get({
-      success: function(res) {
-          let list = res.data.reverse()
-          that.setData({
-            list:list
-          })
+    let openid = app.globalData.openid
+    let list=[]
+    wx.cloud.callFunction({
+      name:"Findfollow",
+      success(res){
+        console.log("success",res)
+        for (let i = 0; i < res.result.list.length; i++) {
+          
+          if(res.result.list[i]._openid==openid){
+            //console.log("find!")
+            list.push(res.result.list[i].followDetail[0])
+          }
+          else{
+            console.log("notfind!")
+          }
+        }
+        list.reverse()
+        //console.log(list)
+        that.setData({
+          list:list
+        })
         
-        
-        //console.log(res.data)
+      },
+      fail(err){
+        console.log("fail",err)
       }
     })
-   
   },
   gotoDetail:function(e){
     //console.log(e)
@@ -36,6 +46,7 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?id='+id,
     })
+    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -43,7 +54,7 @@ Page({
   onLoad: function (options) {
     
     
-    this.getmyList()
+    this.getmyfollow()
 
   },
 
@@ -80,7 +91,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getmyList()
+    this.getmyfollow()
     wx.stopPullDownRefresh()
   },
 

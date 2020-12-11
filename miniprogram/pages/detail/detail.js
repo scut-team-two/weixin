@@ -41,6 +41,7 @@ Page({
       //删评论
       name: 'deleteComment',
       data: {
+        flag:1,
         id: id,
       },
 
@@ -137,26 +138,29 @@ getTime(){
     let id=this.data.id
 
     const db = wx.cloud.database()
+       if(e.detail.value.comment!=""){
         db.collection("t_comment").add({
-      // data 字段表示需新增的 JSON 数据
-      data: {
-        tiezi:id,
-        nickname:nickname,
-        userAvatarUrl:userAvatarUrl,
-        time:time,
-        detail:comment, 
-        
-      },
-      success: function(res) {
-        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-        //清空输入框
-        that.setData({
-          input:""
-        })
-        console.log(res)
-        
-      },    
-    })
+        // data 字段表示需新增的 JSON 数据
+          data: {
+          tiezi:id,
+          nickname:nickname,
+          userAvatarUrl:userAvatarUrl,
+          time:time,
+          detail:comment, 
+          
+        },
+        success: function(res) {
+          
+          //清空输入框
+          that.setData({
+            input:""
+          })
+          console.log(res)
+          that.getComment()
+          
+        },    
+      })
+    }
   },
   //获取评论
   getComment:function(){
@@ -178,6 +182,35 @@ getTime(){
         //console.log(res.data)
       }
     })
+  },
+  //删除评论
+  deleteComment:function(e){
+    let that = this
+    let openid=app.globalData.openid
+    console.log(e)
+    if(openid==e.currentTarget.dataset.openid){
+      wx.showModal({
+        title: '提示',
+        content: '请问是否删除本条评论？',
+        success: function (res) {
+          if (res.confirm) {
+          console.log(e.currentTarget)
+            wx.cloud.callFunction({
+              name: 'deleteComment',
+              data: {
+                flag:0,
+                id: e.currentTarget.id,
+              },
+              success: function (res) {
+                console.log("删除评论成功")
+                that.getComment()
+              }
+            })
+          }
+        }
+      })
+    }
+
   },
   /**
    * 生命周期函数--监听页面加载

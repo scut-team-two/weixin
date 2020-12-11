@@ -58,7 +58,7 @@
     <view style="margin:20rpx;font-family: SimHei;font-size: large">评论区:</view>
     <view wx:for="{{commentlist}}" wx:key="id">
       <view class="all_3" >
-        <view class="line">
+        <view class="line" bindlongpress='deleteComment' data-openid="{{item._openid}}" id="{{item._id}}">
           <view class="userAvatarUrl">
             <image src="{{item.userAvatarUrl}}" class="userAvatarUrl"></image>
           </view>

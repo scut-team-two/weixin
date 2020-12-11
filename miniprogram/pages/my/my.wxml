@@ -23,6 +23,6 @@
 
     <view class="button-sp-area"></view>
     <view class="my following">
-  <button bindtap="my following"
+  <button bindtap="gotomyFollow"
   style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">我的关注</button>
     </view>

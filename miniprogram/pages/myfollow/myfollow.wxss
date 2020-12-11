@@ -1,12 +1,5 @@
-/* miniprogram/pages/detail/detail.wxss */
-.all{
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .all_1{
-  
+  height: 400rpx;
   background-color: #f6f6f6;
   display: flex;
   flex-direction: column;
@@ -21,16 +14,7 @@
   align-items: flex-start;
   margin-bottom: 5rpx;
 }
-.all_3{
-  height: 200rpx;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 5rpx;
-}
 .line{
-  width: 100%;
   margin: 10rpx;
   display: flex;
   flex-direction: row;
@@ -47,12 +31,11 @@
 }
 .image{
   height: 200rpx;
- 
+  
 }
 .userAvatarUrl image{
   height: 130rpx;
   width: 130rpx;
-  
   border-radius: 50%;
 }
 .content text {
@@ -71,40 +54,6 @@
   
   margin: 5rpx;
 }
-.text{
-  display: flex;
-  flex-direction: column;
-}
-.title{
-  font-size: larger;
-  font-family: SimHei;
-  margin-top: 10rpx;
-  margin-bottom: 10rpx;
-}
-.delete{
-  height: 50rpx;
-  width: 20rpx; 
-}
 .time{
   font-size: smaller;
-}
-.comment{
-  position: fixed;
-  width: 100%;
-  height: 80rpx;
-  bottom:0px;
-}
-.buttom{
-  display: flex;
-  flex-direction: row;
-  
-}
-.buttom button{
- 
-  font-size: smaller;
-  margin-right: 40rpx;
-}
-
-.buttom .inp{
-  margin-left: 20rpx;
 }
