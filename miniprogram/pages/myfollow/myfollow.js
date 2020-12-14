@@ -1,4 +1,4 @@
-
+// miniprogram/pages/myfollow/myfollow.js
 const app = getApp()
 Page({
 
@@ -6,20 +6,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[]
+    list:[],
+    
   },
-  getlist(){
+  getmyfollow(){
     let that = this
-    let list_reverse=[]
+    let openid = app.globalData.openid
+    let list=[]
     wx.cloud.callFunction({
-      name:"getlist",
+      name:"Findfollow",
       success(res){
         console.log("success",res)
-        list_reverse=res.result.data
-        list_reverse.reverse()
+        for (let i = 0; i < res.result.list.length; i++) {
+          
+          if(res.result.list[i]._openid==openid){
+            //console.log("find!")
+            list.push(res.result.list[i].followDetail[0])
+          }
+          else{
+            console.log("notfind!")
+          }
+        }
+        list.reverse()
+        //console.log(list)
         that.setData({
-          list:list_reverse
+          list:list
         })
+        
       },
       fail(err){
         console.log("fail",err)
@@ -33,13 +46,15 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?id='+id,
     })
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     
-    this.getlist()
+    
+    this.getmyfollow()
 
   },
 
@@ -76,7 +91,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getlist()
+    this.getmyfollow()
     wx.stopPullDownRefresh()
   },
 

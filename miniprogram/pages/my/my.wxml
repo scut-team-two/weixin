@@ -10,23 +10,19 @@
 
 <view class="personal data">
   <button bindtap="personal data"
-  style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">个人资料</button>
+  style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">个人资料（不可用）</button>
 </view>
 
   <view class="button-sp-area"></view>
     <view class="my question">
-  <button bindtap="my question"
-  style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">我的提问</button>
+      <button bindtap="gotomyList"
+        style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">我的帖子
+      </button >
     </view>
 
-    <view class="button-sp-area"></view>
-    <view class="my answer">
-  <button bindtap="my answer"
-  style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">我的回答</button>
-    </view>
 
     <view class="button-sp-area"></view>
     <view class="my following">
-  <button bindtap="my following"
+  <button bindtap="gotomyFollow"
   style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">我的关注</button>
     </view>

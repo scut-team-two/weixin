@@ -12,12 +12,13 @@
         
         <view class="delete">
           <button wx:if="{{listdetail._openid==openid}}" bindtap="delete" id="{{listdetail._id}}" type="warn">删除</button> 
-          <button bindtap="follow" wx:else>关注</button>
+          <button bindtap="follow" wx:elif="{{isfollow==1}}" id="{{listdetail._id}}">取关</button>
+          <button bindtap="follow" wx:else id="{{listdetail._id}}">关注</button>
         </view>  
       </view>
     <view class="content" >
         <view class="image">
-          <image src="{{listdetail.image}}" mode="heightFix"></image>
+          <image src="{{listdetail.image}}" mode="heightFix" bindtap='clickImg' id="{{listdetail.image}}"></image>
         </view> 
         <view class="text">
           <view class="title">
