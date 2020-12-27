@@ -11,7 +11,7 @@
         <text class="time">{{item.time}}</text>
       </view>
       <view class="flag">
-        <view wx:if="{{item.flag}}">寻物启事</view>
+        <view wx:if="{{item.flag==0}}">寻物启事</view>
         <view wx:else>失物招领</view>
       </view>  
     </view>
@@ -35,7 +35,7 @@
         <text class="time">{{item.time}}</text>
       </view>
       <view class="flag">
-        <view wx:if="{{item.flag}}">寻物启事</view>
+        <view wx:if="{{item.flag==0}}">寻物启事</view>
         <view wx:else>失物招领</view>
       </view>  
     </view>
