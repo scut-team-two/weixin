@@ -9,7 +9,7 @@ Page({
     list:[],
     
   },
-  getmyfollow(){
+  getmyfollow:function(){
     let that = this
     let openid = app.globalData.openid
     let list=[]

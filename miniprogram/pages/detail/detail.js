@@ -55,8 +55,7 @@ Page({
     })
     
 },
-  follow:function(){
-},
+  
   clickImg:function(e){
     console.log(e.currentTarget.id)
     let imgUrl = e.currentTarget.id
