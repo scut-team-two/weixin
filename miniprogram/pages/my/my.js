@@ -1,6 +1,8 @@
 // miniprogram/pages/my/my.js
 const app = getApp()
+
 Page({
+
 
   /**
    * 页面的初始数据
@@ -9,6 +11,16 @@ Page({
 
   },
 
+  gotomyList:function(){
+    wx.navigateTo({
+      url: '../mylist/mylist',
+    })
+  },
+  gotomyFollow:function(){
+    wx.navigateTo({
+      url: '../myfollow/myfollow',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

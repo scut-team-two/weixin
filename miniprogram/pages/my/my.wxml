@@ -5,3 +5,24 @@
   </view>
   <open-data type="userNickName"></open-data>
 </view>
+
+<view class="button-sp-area"></view>
+
+<view class="personal data">
+  <button bindtap="personal data"
+  style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">个人资料（不可用）</button>
+</view>
+
+  <view class="button-sp-area"></view>
+    <view class="my question">
+      <button bindtap="gotomyList"
+        style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">我的帖子
+      </button >
+    </view>
+
+
+    <view class="button-sp-area"></view>
+    <view class="my following">
+  <button bindtap="gotomyFollow"
+  style="height: 80rpx;width: 100%;color:black;text-align:left;font-weight:400;font-size:33rpx;line-height =90rpx">我的关注</button>
+    </view>

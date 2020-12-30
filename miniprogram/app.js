@@ -20,4 +20,5 @@ App({
 globalData:{
   openid:""
   userAvatarUrl:""
+  nickname:""
 }

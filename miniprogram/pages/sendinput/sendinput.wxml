@@ -1,0 +1,22 @@
+<!--miniprogram/pages/sendinput/sendinput.wxml-->
+<view>
+  <text wx:if="{{flag==false}}">寻物启示</text>
+  <text wx:else>失物招领</text>
+  <view >
+    <view>
+      <view>标题</view>
+      <input type="text" placeholder="请输入标题" maxlength="35" bindinput="getTitle" />
+    </view>
+    <view>
+      <view>正文</view>
+      <textarea placeholder="请输入正文" auto-focus maxlength="200" auto-focus="{{false}}" bindinput="getDetail" />
+    </view>
+    <block wx:if="{{path}}">
+      <image src="{{path}}"  mode="heightFix" bindtap='addImage' ></image>
+    </block>
+    <block wx:else>
+      <image src="cloud://group2-5gpz1vkk79ec1e20.6772-group2-5gpz1vkk79ec1e20-1304093654/添加.png"  mode="heightFix" bindtap='addImage' ></image>
+    </block>
+    <button bindtap="send">发表</button>
+  </view>
+</view>

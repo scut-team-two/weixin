@@ -3,14 +3,20 @@
     "pages/index/index",
     "pages/my/my",
     "pages/list/list",
-    "pages/send/send"
+    "pages/send/send",
+    "pages/sendinput/sendinput",
+    "pages/detail/detail",
+    "pages/mylist/mylist",
+    "pages/myfollow/myfollow"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "华工找找",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
   },
   "tabBar": {
     "color": "#cdcdcd",
@@ -23,7 +29,7 @@
         "selectedIconPath": "/images/首页.png"
       },
       {
-      "pagePath": "pages/send/send",
+        "pagePath": "pages/send/send",
         "text": "发帖",
         "iconPath": "/images/新建1.png",
         "selectedIconPath": "/images/新建.png"

@@ -1,0 +1,5 @@
+/* miniprogram/pages/sendinput/sendinput.wxss */
+image{
+  height: 200rpx;
+  border:1rpx solid silver;
+}

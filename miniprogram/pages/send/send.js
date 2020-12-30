@@ -62,5 +62,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  find: function(){
+    wx.navigateTo({
+      url: '../sendinput/sendinput?flag=1',
+    })
+  },
+
+ lose: function(){
+    wx.navigateTo({
+      url: '../sendinput/sendinput?flag=0',
+    })
   }
 })

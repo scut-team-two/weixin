@@ -10,8 +10,9 @@ Page({
   getUserInfo:function(e){
     let that=this
     var info = e.detail.userInfo
-    //console.log(info)
-    app.globalData.userAvatarUrl=info.userAvatarUrl
+    console.log(info)
+    app.globalData.userAvatarUrl=info.avatarUrl
+    app.globalData.nickname=info.nickName
     wx.cloud.callFunction(
       {
       // 需要调用的云函数名
@@ -29,7 +30,7 @@ Page({
          }).get().then(res=>{
            //console.log(res)
            if(res.data.length){
-             console.log("成功")
+             //console.log("成功")
            }
            else{
             collection.add({
@@ -48,7 +49,7 @@ Page({
     }
     )
     wx.switchTab({
-      url: '../my/my',
+      url: '../list/list',
     })
   },
   

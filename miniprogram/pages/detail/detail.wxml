@@ -1,0 +1,94 @@
+<!--有图-->
+<view class="all"> 
+  <view class="all_1" wx:if="{{listdetail.image}}" style="height:{{height}}rpx">
+      <view class="line">
+        <view class="userAvatarUrl">
+          <image src="{{listdetail.userAvatarUrl}}"></image>
+        </view>
+        <view class="name_time">
+          <text>{{listdetail.nickname}}</text>
+          <text class="time">{{listdetail.time}}</text>
+        </view>
+        
+        <view class="delete">
+          <button wx:if="{{listdetail._openid==openid}}" bindtap="delete" id="{{listdetail._id}}" type="warn">删除</button> 
+          <button bindtap="follow" wx:elif="{{isfollow==1}}" id="{{listdetail._id}}">取关</button>
+          <button bindtap="follow" wx:else id="{{listdetail._id}}">关注</button>
+        </view>  
+      </view>
+    <view class="content" >
+        <view class="image">
+          <image src="{{listdetail.image}}" mode="heightFix" bindtap='clickImg' id="{{listdetail.image}}"></image>
+        </view> 
+        <view class="text">
+          <view class="title">
+            <text >{{listdetail.title}}</text>
+          </view>
+          <text>{{listdetail.detail}}</text>
+        </view>        
+      </view>
+    </view>
+  <!-- 无图 -->
+    <view class="all_2" wx:else  style="height:{{height_1}}rpx">
+      <view class="line">
+        <view class="userAvatarUrl">
+          <image src="{{listdetail.userAvatarUrl}}"></image>
+        </view>
+        <view class="name_time">
+          <text>{{listdetail.nickname}}</text>
+          <text class="time">{{listdetail.time}}</text>
+        </view>
+        
+        
+        <view class="delete">
+          <button wx:if="{{listdetail._openid==openid}}" bindtap="delete" id="{{listdetail._id}}" type="warn">删除</button> 
+          <button bindtap="follow" wx:else>关注</button>
+        </view>  
+          
+      </view>
+      <view class="content" >
+        <view class="text">
+          <text class="title">{{listdetail.title}}</text>
+          <text>{{listdetail.detail}}</text>
+        </view>        
+      </view>
+    </view>
+    
+    <!-- 评论区-->
+    <view style="margin:20rpx;font-family: SimHei;font-size: large">评论区:</view>
+    <view wx:for="{{commentlist}}" wx:key="id">
+      <view class="all_3" >
+        <view class="line" bindlongpress='deleteComment' data-openid="{{item._openid}}" id="{{item._id}}">
+          <view class="userAvatarUrl">
+            <image src="{{item.userAvatarUrl}}" class="userAvatarUrl"></image>
+          </view>
+          <view class="name_time">
+            <text>{{item.nickname}}</text>
+            <text class="time">{{item.time}}</text>
+          </view>
+        </view>
+        <view class="content" >
+          <view>
+            <text>{{item.detail}}</text>
+          </view>        
+        </view>
+      </view>
+    </view>
+
+
+
+    <!-- 评论 -->
+    <view class="comment">
+      <form bindsubmit="formSubmit">
+        <view class='buttom' >
+        
+          <view class='inp'>
+            <input placeholder="写评论..." name="comment" value="{{input}}"cursor-spacing="20"></input>
+          </view>
+          <button form-type="submit" size="mini">
+            <text class='fb'>发表</text>
+          </button>
+        </view>
+      </form>
+    </view>
+</view>
