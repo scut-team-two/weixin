@@ -8,6 +8,7 @@ Page({
     list:[],
     openid:""
   },
+
   getmyList:function(){
     let that = this
     let list_reverse=[]

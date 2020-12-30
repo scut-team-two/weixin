@@ -1,3 +1,4 @@
+
 .all_1{
   height: 400rpx;
   background-color: #f6f6f6;
@@ -56,4 +57,5 @@
 }
 .time{
   font-size: smaller;
+
 }

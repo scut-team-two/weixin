@@ -1,3 +1,4 @@
+
 /* miniprogram/pages/list/list.wxss */
 
 .all_1{
@@ -58,4 +59,5 @@
 }
 .time{
   font-size: smaller;
+
 }
