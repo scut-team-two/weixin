@@ -8,7 +8,7 @@ Page({
   data: {
     list:[]
   },
-  getlist(){
+  getlist:function(){
     let that = this
     let list_reverse=[]
     wx.cloud.callFunction({

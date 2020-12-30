@@ -8,7 +8,8 @@ Page({
     list:[],
     openid:""
   },
-  getmyList(){
+
+  getmyList:function(){
     let that = this
     let list_reverse=[]
     let openid= app.globalData.openid

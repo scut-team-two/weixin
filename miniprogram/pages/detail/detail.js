@@ -55,8 +55,7 @@ Page({
     })
     
 },
-  follow:function(){
-},
+
   clickImg:function(e){
     console.log(e.currentTarget.id)
     let imgUrl = e.currentTarget.id
@@ -68,12 +67,14 @@ Page({
       complete: function (res) { },
     })
   
+
 },
 getTime(){
   var time = util.formatTime(new Date());
   //console.log(time)
   return time
 },
+
 //关注
   follow:function(e){
     let id = e.currentTarget.id

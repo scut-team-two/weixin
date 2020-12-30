@@ -1,3 +1,4 @@
+
 /* miniprogram/pages/detail/detail.wxss */
 .all{
   min-height: 100%;
@@ -107,4 +108,5 @@
 
 .buttom .inp{
   margin-left: 20rpx;
+
 }
